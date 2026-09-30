@@ -55,9 +55,3 @@ Library-Management-System/
 ## 🎯 Purpose
 
 This project was developed as a Java desktop application to practice building a GUI-based application with **Java Swing**, connecting it to a **MySQL database using JDBC**, and implementing common library-management operations.
-
-## 👨‍💻 Author
-
-**Aman G Nair**
-
-🔗 GitHub: [@Amangnair](https://github.com/Amangnair)
