@@ -76,3 +76,10 @@ Library-Management-System/
 ## 🎯 Purpose
 
 This project was developed as a Java desktop application to practice building a GUI-based application with **Java Swing**, connecting it to a **MySQL database using JDBC**, and implementing common library-management operations.
+
+## 🚧 Development Status
+
+**Functionality:** ✅ Completed
+
+The application is functionally complete. Minor **UI/UX improvements** are still being explored, such as introducing a more modern visual theme and incorporating relevant library and book imagery where appropriate.
+
