@@ -18,20 +18,20 @@ The application is designed to manage library books, users, book issue/return de
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/46f14acc-94cc-4223-8f3a-04f4a487dd1f" width="400"></td>
-    <td><img src="https://github.com/user-attachments/assets/87bab31c-0af3-4771-9726-e716f3d45cd3" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/1cf04614-0008-43fc-944a-09ebe50f857e" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/ce39816f-0940-4ceb-83c7-843c0aab6ad2" width="400"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/e4519507-c926-4551-bc4f-03603bd804e0" width="400"></td>
-    <td><img src="https://github.com/user-attachments/assets/0f5b2f76-8e04-4879-8163-a538ed5572ce" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/7780becb-1ce6-4e76-9bed-ec910dacfaa3" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/7353564f-1991-4a7b-8d60-5664bc13749a" width="400"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/8faa15ae-2091-4759-a785-175943116e4e" width="400"></td>
-    <td><img src="https://github.com/user-attachments/assets/e505de3d-bdc4-49d6-83db-8713d620b156" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/93ebbca1-d080-4ca2-91e4-b4559adeba0f" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/2bda3000-8254-4bce-a705-3146809613d9" width="400"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/b6e8e31d-8571-4d4f-a9f1-4e434e85419e" width="400"></td>
-    <td><img src="https://github.com/user-attachments/assets/68670388-ec18-4506-b040-ed0659dd50e4" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/b0be3709-f811-46f2-b9d8-c5ec8a7905d5" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/b3be85b8-160b-4c4e-b433-0d8c6596c61b" width="400"></td>
   </tr>
 </table>
 
