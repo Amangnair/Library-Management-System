@@ -332,25 +332,35 @@ public class IssueBooks extends javax.swing.JFrame {
         else if (clas.isEmpty())
             JOptionPane.showMessageDialog(this, "Enter the student's class");
         else {
-            JOptionPane.showMessageDialog(this, "Book returned successfully.");
-            jTextField2.setText("");
-            jTextField3.setText("");
-            jTextField4.setText("");
-
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection con = DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
                 Statement stmt = con.createStatement();
 
-                String query = "Delete from issuedbooks where roll_no='" + rollno
+                String query = "Select * from issuedbooks where roll_no='" + rollno
                         + "' and student_class='" + clas + "' and book_code='" + bookcode + "';";
-                stmt.executeUpdate(query);
+                ResultSet rs = stmt.executeQuery(query);
+                
+                if(rs.next()){
+                    String query1 = "Delete from issuedbooks where roll_no='" + rollno
+                        + "' and student_class='" + clas + "' and book_code='" + bookcode + "';";
+                    stmt.executeUpdate(query1);
 
-                String query1 = "Update booklist "
-                        + "set availability_status = 'Available' "
-                        + "where book_code = '" + bookcode + "'";
-                stmt.executeUpdate(query1);
+                    String query2 = "Update booklist "
+                            + "set availability_status = 'Available' "
+                            + "where book_code = '" + bookcode + "'";
+                    stmt.executeUpdate(query2);
+
+                    JOptionPane.showMessageDialog(this, "Book returned successfully.");
+                    jTextField2.setText("");
+                    jTextField3.setText("");
+                    jTextField4.setText("");
+                }else{
+                    JOptionPane.showMessageDialog(this, "No issued book found with these details. "
+                            + "Please verify that the Roll No., Class, and Book Code are correct.");
+                }
+                
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }
