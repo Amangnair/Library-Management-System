@@ -31,7 +31,7 @@ The application is designed to manage library books, users, book issue/return de
   </tr>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/a83a8334-2794-44cc-8bec-2a520dae55e0" width="400"></td>
-    <td><img src="https://github.com/user-attachments/assets/285e3036-58fd-42f1-b8dc-b813b23deb34" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/0fc5a5bd-1ef6-4b17-848b-e8063bbcd781" width="400"></td>
   </tr>
 </table>
 
