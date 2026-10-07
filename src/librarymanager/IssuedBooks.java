@@ -171,16 +171,30 @@ public class IssuedBooks extends javax.swing.JFrame {
                     "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
             Statement stmt = con.createStatement();
 
-            String query = "Select*from issuedbooks i,booklist b where i.book_code=b.book_code;";
+            String query = """
+                           SELECT
+                               s.student_name,
+                               s.class,
+                               s.section,
+                               s.roll_no,
+                               b.book_code,
+                               b.book_name,
+                               i.issued_date
+                           FROM issuedbooks i
+                           JOIN students s
+                               ON i.student_id = s.student_id
+                           JOIN booklist b
+                               ON i.book_code = b.book_code
+                           ORDER BY i.issued_date;""";
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
-                String Roll_No = rs.getString("roll_no");
-                String Book_name = rs.getString("book_name");
-                String Book_Code = rs.getString("book_code");
                 String Student_Name = rs.getString("student_name");
-                String Class = rs.getString("student_class");
+                String Class = rs.getString("class");
                 String Section = rs.getString("section");
+                String Roll_No = rs.getString("roll_no");
+                String Book_Code = rs.getString("book_code");
+                String Book_name = rs.getString("book_name");
                 String Date_Of_Issue = rs.getString("issued_date");
 
                 model.addRow(new Object[]{

@@ -108,6 +108,16 @@ public class DueBooks extends javax.swing.JFrame {
         });
         jTable2.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setHeaderValue("Student Name");
+            jTable2.getColumnModel().getColumn(1).setHeaderValue("Class");
+            jTable2.getColumnModel().getColumn(2).setHeaderValue("Section");
+            jTable2.getColumnModel().getColumn(3).setHeaderValue("Roll No.");
+            jTable2.getColumnModel().getColumn(4).setHeaderValue("Book Name");
+            jTable2.getColumnModel().getColumn(5).setHeaderValue("Date of Issue");
+            jTable2.getColumnModel().getColumn(6).setHeaderValue("Days Passed");
+            jTable2.getColumnModel().getColumn(7).setHeaderValue("Due Fine (Rs)");
+        }
 
         jButton1.setBackground(new java.awt.Color(51, 102, 204));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -216,15 +226,27 @@ public class DueBooks extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
             Statement stmt = con.createStatement();
-
-            String query = "SELECT student_name, student_class, section, roll_no , book_name, "
-                    + "issued_date, " + "datediff(curdate(),issued_date) AS Days_Passed "
-                    + "FROM issuedbooks i JOIN booklist b ON i.book_code = b.book_code;";
+            
+            String query = """
+                           SELECT
+                               s.student_name,
+                               s.class,
+                               s.section,
+                               s.roll_no,
+                               b.book_name,
+                               i.issued_date,
+                               datediff(curdate(),issued_date) AS Days_Passed
+                           FROM issuedbooks i
+                           JOIN students s
+                               ON i.student_id = s.student_id
+                           JOIN booklist b
+                               ON i.book_code = b.book_code
+                           ORDER BY i.issued_date;""";
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
                 String Student_Name = rs.getString("student_name");
-                String Class = rs.getString("student_class");
+                String Class = rs.getString("class");
                 String Section = rs.getString("section");
                 String Roll_No = rs.getString("roll_no");
                 String Book_Name = rs.getString("book_name");
