@@ -59,11 +59,11 @@ public class IssuedBooks extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Roll No.", "Class", "Student Name", "Book Name", "Book Code", "Date of Issue"
+                "Student Name", "Class", "Section", "Roll No.", "Book Code", "Book Name", "Date of Issue"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -180,10 +180,11 @@ public class IssuedBooks extends javax.swing.JFrame {
                 String Book_Code = rs.getString("book_code");
                 String Student_Name = rs.getString("student_name");
                 String Class = rs.getString("student_class");
+                String Section = rs.getString("section");
                 String Date_Of_Issue = rs.getString("issued_date");
 
                 model.addRow(new Object[]{
-                    Roll_No, Class, Student_Name, Book_name, Book_Code, Date_Of_Issue
+                    Student_Name, Class, Section, Roll_No, Book_Code, Book_name, Date_Of_Issue
                 });
             }
         } catch (Exception e) {

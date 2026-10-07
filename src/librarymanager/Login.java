@@ -184,9 +184,9 @@ public class Login extends javax.swing.JFrame {
         String uid = null;
 
         if (userid.isEmpty())
-        JOptionPane.showMessageDialog(this, "Enter a username");
+        JOptionPane.showMessageDialog(this, "Enter the username");
         else if (password.length == 0)
-        JOptionPane.showMessageDialog(this, "Enter a password");
+        JOptionPane.showMessageDialog(this, "Enter the password");
         else {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");

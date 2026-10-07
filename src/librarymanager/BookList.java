@@ -82,7 +82,7 @@ public class BookList extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Book Name", "Genre", "Author", "Book Code", "Availability Status"
+                "Book Code", "Book Name", "Genre", "Author", "Availability Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -132,9 +132,9 @@ public class BookList extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton1))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
@@ -176,7 +176,8 @@ public class BookList extends javax.swing.JFrame {
                 String Book_Code = rs.getString("book_code");
                 String Book_Status = rs.getString("availability_status");
 
-                model.addRow(new Object[]{Book_Name, Genre, Author, Book_Code, Book_Status});
+                model.addRow(new Object[]{
+                    Book_Code, Book_Name, Genre, Author, Book_Status});
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());

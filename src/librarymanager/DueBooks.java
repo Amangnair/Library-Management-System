@@ -95,11 +95,11 @@ public class DueBooks extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Roll No.", "Class", "Student Name", "Book Name", "Date of Issue", "Days Passed", "Due Fine (Rs)"
+                "Student Name", "Class", "Section", "Roll No.", "Book Name", "Date of Issue", "Days Passed", "Due Fine (Rs)"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -217,16 +217,18 @@ public class DueBooks extends javax.swing.JFrame {
                     "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
             Statement stmt = con.createStatement();
 
-            String query = "SELECT roll_no, student_class, student_name, book_name, "
+            String query = "SELECT student_name, student_class, section, roll_no , book_name, "
                     + "issued_date, " + "datediff(curdate(),issued_date) AS Days_Passed "
                     + "FROM issuedbooks i JOIN booklist b ON i.book_code = b.book_code;";
             ResultSet rs = stmt.executeQuery(query);
 
             while (rs.next()) {
-                String Roll_No = rs.getString("roll_no");
-                String Book_Name = rs.getString("book_name");
                 String Student_Name = rs.getString("student_name");
                 String Class = rs.getString("student_class");
+                String Section = rs.getString("section");
+                String Roll_No = rs.getString("roll_no");
+                String Book_Name = rs.getString("book_name");
+                
                 String Date_Of_Issue = rs.getString("issued_date");
                 int Days_Passed = rs.getInt("Days_Passed");
                 int Due_Fine = 0;
@@ -246,7 +248,7 @@ public class DueBooks extends javax.swing.JFrame {
                 }
 
                 model.addRow(new Object[]{
-                    Roll_No, Class, Student_Name, Book_Name, Date_Of_Issue, Days_Passed, Due_Fine
+                    Student_Name, Class, Section, Roll_No, Book_Name, Date_Of_Issue, Days_Passed, Due_Fine
                 });
             }
         } catch (Exception e) {

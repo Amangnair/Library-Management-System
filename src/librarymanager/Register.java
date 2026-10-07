@@ -207,17 +207,17 @@ public class Register extends javax.swing.JFrame {
         String mobile = jTextField4.getText();
 
         if (userid.isEmpty() && password.isEmpty() && fullname.isEmpty() && school.isEmpty() && mobile.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter data");
+            JOptionPane.showMessageDialog(this, "Enter the data");
         else if (userid.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter a username");
+            JOptionPane.showMessageDialog(this, "Enter the username");
         else if (password.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter a password");
+            JOptionPane.showMessageDialog(this, "Enter the password");
         else if (fullname.isEmpty())
             JOptionPane.showMessageDialog(this, "Enter the fullname");
         else if (school.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter a organization/school name");
+            JOptionPane.showMessageDialog(this, "Enter the organization/school name");
         else if (mobile.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter a mobile number");
+            JOptionPane.showMessageDialog(this, "Enter the mobile number");
         else {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");

@@ -82,7 +82,7 @@ public class ModifyBookList extends javax.swing.JFrame {
         jTextField2.setToolTipText("Enter a book name");
 
         jComboBox1.setBackground(new java.awt.Color(245, 247, 250));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Adventure", "Biography", "Classic", "Comedy", "Dystopian", "Education", "Essays", "Fantasy", "Fiction", "Geography", "Historical", "Inspirational", "Mathematics", "Mystery", "Non Fiction", "Political Fiction", "Reference", "Science", "Science Fiction", "Short Stories", "Technology" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select a genre", "Adventure", "Biography", "Classic", "Comedy", "Dystopian", "Education", "Essays", "Fantasy", "Fiction", "Geography", "Historical", "Inspirational", "Mathematics", "Mystery", "Non Fiction", "Political Fiction", "Reference", "Science", "Science Fiction", "Short Stories", "Technology" }));
         jComboBox1.setToolTipText("Select a genre");
         jComboBox1.addActionListener(this::jComboBox1ActionPerformed);
 
@@ -157,13 +157,10 @@ public class ModifyBookList extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(3, 3, 3)
-                                            .addComponent(jLabel4)))
+                                    .addComponent(jLabel1)
                                     .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -206,7 +203,7 @@ public class ModifyBookList extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
-                            .addComponent(jButton7))
+                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,9 +256,13 @@ public class ModifyBookList extends javax.swing.JFrame {
         String author = jTextField3.getText();
 
         if (bookcode.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter a book code");
+            JOptionPane.showMessageDialog(this, "Enter the book code");
         else if (bookname.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter a book name");
+            JOptionPane.showMessageDialog(this, "Enter the book name");
+        else if (genre.equals("Select a genre"))
+            JOptionPane.showMessageDialog(this, "Select the book's genre");
+        else if (author.isEmpty())
+            JOptionPane.showMessageDialog(this, "Enter the author's name");
         else {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -289,7 +290,7 @@ public class ModifyBookList extends javax.swing.JFrame {
         String bookcode = jTextField1.getText();
 
         if (bookcode.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter a book code");
+            JOptionPane.showMessageDialog(this, "Enter the book code of the book details to be removed");
         else {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -337,11 +338,15 @@ public class ModifyBookList extends javax.swing.JFrame {
         String bookname = jTextField2.getText();
         Object genre = jComboBox1.getSelectedItem();
         String author = jTextField3.getText();
-
-        if (bookname.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter a book name");
-        else if (bookcode.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter a book code");
+        
+        if (bookcode.isEmpty())
+            JOptionPane.showMessageDialog(this, "Enter the book code");
+        else if (bookname.isEmpty())
+            JOptionPane.showMessageDialog(this, "Enter the book name");
+        else if (genre.equals("Select a genre"))
+            JOptionPane.showMessageDialog(this, "Select the book's genre");
+        else if (author.isEmpty())
+            JOptionPane.showMessageDialog(this, "Enter the author's name");
         else {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -369,7 +374,7 @@ public class ModifyBookList extends javax.swing.JFrame {
         String bookcode = jTextField1.getText();
 
         if (bookcode.isEmpty())
-            JOptionPane.showMessageDialog(this, "Enter a book code to fetch details");
+            JOptionPane.showMessageDialog(this, "Enter the book code to fetch details");
         else {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
