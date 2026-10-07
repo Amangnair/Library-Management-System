@@ -26,12 +26,12 @@ The application is designed to manage library books, users, book issue/return de
     <td><img src="https://github.com/user-attachments/assets/daf55d38-1799-4fd2-b5ea-1b8a02c813b8" width="400"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/93ebbca1-d080-4ca2-91e4-b4559adeba0f" width="400"></td>
-    <td><img src="https://github.com/user-attachments/assets/2bda3000-8254-4bce-a705-3146809613d9" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/6c152bb6-34d1-4e5c-988a-9c9ec3fe1dfe" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/38ae5de6-8f7e-40ac-ad85-2f58e56fbeb2" width="400"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/a40cce25-5aab-4b20-8fba-0fee8f3ab5da" width="400"></td>
-    <td><img src="https://github.com/user-attachments/assets/c41071ad-ee1e-410a-9480-0c82a27847e0" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/e906aa19-7a24-425c-ac78-f3e89d7e2d16" width="400"></td>
+    <td><img src="https://github.com/user-attachments/assets/ce6ea7e3-9839-464f-93db-7751ab187e95" width="400"></td>
   </tr>
 </table>
 
