@@ -2,7 +2,6 @@ package librarymanager;
 
 import javax.swing.JOptionPane;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.Statement;
 
 /*
@@ -223,9 +222,7 @@ public class Register extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enter the mobile number");
         else {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+                Connection con = DatabaseConnection.getConnection();
                 Statement stmt = con.createStatement();
 
                 String query = "Insert into Users values("

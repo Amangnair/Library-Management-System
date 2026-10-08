@@ -5,7 +5,6 @@
 package librarymanager;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -259,8 +258,7 @@ public class ManageStudents extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enter the Student's Roll Number");
         else {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+                Connection con = DatabaseConnection.getConnection();
                 Statement stmt = con.createStatement();
                 
                 int rollNum = Integer.parseInt(rollNumber);
@@ -308,9 +306,7 @@ public class ManageStudents extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Enter the Student ID");
         else {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+                Connection con = DatabaseConnection.getConnection();
                 Statement stmt = con.createStatement();
 
                 String query = "Delete from students where student_id='" + studentId + "';";
@@ -369,9 +365,7 @@ public class ManageStudents extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enter the Student's Roll Number");
         else {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+                Connection con = DatabaseConnection.getConnection();
                 Statement stmt = con.createStatement();
 
                 String query = "select * from students where student_id='" + studentId + "';";
@@ -412,9 +406,7 @@ public class ManageStudents extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enter the student ID to fetch student details");
         else {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+                Connection con = DatabaseConnection.getConnection();
                 Statement stmt = con.createStatement();
 
                 String query = "Select * from students where student_id='" + studentId + "';";

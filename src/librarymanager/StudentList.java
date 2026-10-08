@@ -5,7 +5,6 @@
 package librarymanager;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -176,9 +175,7 @@ public class StudentList extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+            Connection con = DatabaseConnection.getConnection();
             Statement stmt = con.createStatement();
 
             String query = "Select * from students order by student_name;";

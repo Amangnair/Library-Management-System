@@ -1,7 +1,6 @@
 package librarymanager;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -214,9 +213,7 @@ public class DueBooks extends javax.swing.JFrame {
         }
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+            Connection con = DatabaseConnection.getConnection();
             Statement stmt = con.createStatement();
             
             String query = """

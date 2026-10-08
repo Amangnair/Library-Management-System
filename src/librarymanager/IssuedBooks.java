@@ -1,7 +1,6 @@
 package librarymanager;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
@@ -174,9 +173,7 @@ public class IssuedBooks extends javax.swing.JFrame {
         model.setRowCount(0);
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+            Connection con = DatabaseConnection.getConnection();
             Statement stmt = con.createStatement();
 
             String query = """

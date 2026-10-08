@@ -1,7 +1,6 @@
 package librarymanager;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
@@ -263,9 +262,7 @@ public class ManageBooks extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enter the author's name");
         else {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+                Connection con = DatabaseConnection.getConnection();
                 Statement stmt = con.createStatement();
 
                 String query = "Insert into booklist (book_code, book_name, genre, author)"
@@ -291,9 +288,7 @@ public class ManageBooks extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enter the Book Code");
         else {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+                Connection con = DatabaseConnection.getConnection();
                 Statement stmt = con.createStatement();
 
                 String query = "delete from booklist where book_code='" + bookcode + "';";
@@ -347,9 +342,7 @@ public class ManageBooks extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enter the author's name");
         else {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+                Connection con = DatabaseConnection.getConnection();
                 Statement stmt = con.createStatement();
 
                 String query = "select * from booklist where book_code='" + bookcode + "';";
@@ -382,9 +375,7 @@ public class ManageBooks extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Enter the book code to fetch details");
         else {
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection(
-                        "jdbc:mysql://localhost:3306/library_manager", "root", "vas");
+                Connection con = DatabaseConnection.getConnection();
                 Statement stmt = con.createStatement();
 
                 String query = "Select * from booklist where book_code='" + bookcode + "';";
