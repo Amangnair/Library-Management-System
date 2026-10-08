@@ -575,7 +575,7 @@ public class IssueBooks extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new ModifyBookList().setVisible(true);
+        new ManageBooks().setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     /**

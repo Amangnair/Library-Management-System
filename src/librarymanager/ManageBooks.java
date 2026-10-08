@@ -14,14 +14,14 @@ import javax.swing.JOptionPane;
  *
  * @author Aman
  */
-public class ModifyBookList extends javax.swing.JFrame {
+public class ManageBooks extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ModifyBookList.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ManageBooks.class.getName());
 
     /**
      * Creates new form ModifyBookList
      */
-    public ModifyBookList() {
+    public ManageBooks() {
         initComponents();
     }
 
@@ -428,7 +428,7 @@ public class ModifyBookList extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new ModifyBookList().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new ManageBooks().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
