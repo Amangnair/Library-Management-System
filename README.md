@@ -70,9 +70,18 @@ Library-Management-System/
 1. 📥 Clone or download this repository.
 2. 💻 Open the project in **NetBeans IDE**.
 3. 🗄️ Configure the MySQL database connection used by the application.
-4. 📊 Make sure the required MySQL database and tables are created with their respective columns and appropriate data types.
-   
-   <img width="506" height="698" alt="Screenshot 2026-10-08 010800" src="https://github.com/user-attachments/assets/8f405f6b-f155-433f-ab30-26d0ac3fdeea" />
+4. 📊 Create the required MySQL database and tables with their respective columns, constraints, appropriate data types and relation.
+
+  <table>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/6445a58e-b3ad-411b-b740-0ea92ddfd2a1" width="400"></td>
+      <td><img src="https://github.com/user-attachments/assets/dc1a208f-c84f-4bf1-94fe-f0b612940c5a" width="400"></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/8e83baff-d295-483a-9c33-de9899159c3e" width="400"></td>
+      <td><img src="https://github.com/user-attachments/assets/318aa5b0-9926-4d7b-98f3-72d2c2f17a56" width="400"></td>
+    </tr>
+  </table>
 
 6. ▶️ Build and run the project from NetBeans.
 
